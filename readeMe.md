@@ -98,3 +98,5 @@ class ToDoList:
 Now, you should:  
 ✅ Understand the class structure  
 ✅ Confirm if you want file saving or just a simple list-based approach  
+
+**Next:** I will implement the methods one by one. Are you ready? 🚀
