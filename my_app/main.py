@@ -1,10 +1,10 @@
-# main.py
-from todo_list import ToDoList
-from storage import save_tasks, load_tasks
+# main.py (optimized with match-case)
+# from todo_list import ToDoList
+# from storage import save_tasks, load_tasks
 
 def main():
-    todo_list = ToDoList()
-    load_tasks(todo_list)  # Charger les tâches enregistrées
+    # todo_list = ToDoList()
+    # load_tasks(todo_list)  # Charger les tâches enregistrées
 
     while True:
         print("\n📌 Menu To-Do List")
@@ -15,29 +15,31 @@ def main():
 
         choice = input("👉 Choisissez une option : ")
 
-        if choice == "1":
-            desc = input("📝 Entrez la description de la tâche : ")
-            todo_list.add_task(desc)
-            save_tasks(todo_list)
+        match choice:
+            case "1":
+                desc = input("📝 Entrez la description de la tâche : ")
+                # todo_list.add_task(desc)
+                # save_tasks(todo_list)
 
-        elif choice == "2":
-            todo_list.view_tasks()
+            case "2":
+                # todo_list.view_tasks()
+                pass
 
-        elif choice == "3":
-            todo_list.view_tasks()
-            try:
-                index = int(input("🔢 Entrez le numéro de la tâche à supprimer : ")) - 1
-                todo_list.remove_task(index)
-                save_tasks(todo_list)
-            except ValueError:
-                print("⚠️ Entrée invalide.")
+            case "3":
+                # todo_list.view_tasks()
+                try:
+                    index = int(input("🔢 Entrez le numéro de la tâche à supprimer : ")) - 1
+                    # todo_list.remove_task(index)
+                    # save_tasks(todo_list)
+                except ValueError:
+                    print("⚠️ Entrée invalide.")
 
-        elif choice == "4":
-            print("👋 Au revoir !")
-            break
+            case "4":
+                print("👋 Au revoir !")
+                break
 
-        else:
-            print("❌ Option invalide. Essayez encore.")
+            case _:
+                print("❌ Option invalide. Essayez encore.")
 
 if __name__ == "__main__":
     main()
