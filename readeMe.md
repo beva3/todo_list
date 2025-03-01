@@ -100,3 +100,32 @@ Now, you should:
 ✅ Confirm if you want file saving or just a simple list-based approach  
 
 **Next:** I will implement the methods one by one. Are you ready? 🚀
+
+Your idea is **good**, but there's a small mistake:  
+
+Your **`data`** folder is currently **outside** `ToDoListApp`. This means the program might not find the `tasks.json` file correctly.  
+
+---
+
+## **✅ Folder Structure**
+You should put `data/` **inside** `ToDoListApp/`, like this:
+
+```
+📦 ToDoListApp
+ ┣ 📂 data              # 📂 Folder to store JSON files
+ ┃ ┗ 📜 tasks.json      # 📜 File to save task data
+ ┣ 📜 main.py           # 🎯 Main script to run the application
+ ┣ 📜 task.py           # 📝 Task class
+ ┣ 📜 todo_list.py      # 📋 ToDoList class
+ ┗ 📜 storage.py        # 💾 Handles saving & loading tasks
+```
+
+---
+
+## **✅ Improvements in This Version**
+1️⃣ **Ensures `data/` folder exists** before saving.  
+2️⃣ **Handles missing `tasks.json`** properly (no crash).  
+3️⃣ **Uses `utf-8` encoding** to support special characters.  
+4️⃣ **Formats JSON with `indent=4`** for better readability.  
+
+---
